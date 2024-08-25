@@ -24,7 +24,7 @@ app = dash.Dash(__name__)
 # Create an app layout
 app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                         style={'textAlign': 'center', 'color': '#503D36',
-                                               'font-size': 40}),
+                                               'fontSize': 40}),
                                 # TASK 1: Add a dropdown list to enable Launch Site selection
                                 # The default select value is for ALL sites
                                 dcc.Dropdown(id='site-dropdown',
@@ -44,8 +44,20 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                 # TASK 3: Add a slider to select payload range
                                 dcc.RangeSlider(id='payload-slider',
                                                 min=0, max=10000, step=1000,
-                                                marks={0: '0',
-                                                       100: '100'},
+                                                marks={
+                                                        0: '0',
+                                                        100: '100',
+                                                        1000: '1000',
+                                                        2000: '2000',
+                                                        3000: '3000',
+                                                        4000: '4000',
+                                                        5000: '5000',
+                                                        6000: '6000',
+                                                        7000: '7000',
+                                                        8000: '8000',
+                                                        9000: '9000',
+                                                        10000: '10000'
+                                                    },
                                                 value=[min_payload, max_payload]),
 
                                 # TASK 4: Add a scatter chart to show the correlation between payload and launch success
